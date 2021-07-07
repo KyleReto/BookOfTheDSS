@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/stylesheets/quote.css">
-    <title>Home</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/stylesheets/quote.css">
+	<title>Home</title>
 </head>
 <body>
 <header>
@@ -13,32 +13,34 @@
 <main>
   <div class="quote">
 
-    <% quote.messages.forEach(function(item){   %>
-    <div class="message">
-      <div class="avatar">
-        <img src="/assets/avatars/<%=item.sender%>.png">
-      </div>
-      <div class="contents">
-        <h2 class="nameHeader">
-          <span class="username" style="color: var(--username-<%=item.sender%>)">
-            <%=item.sender%>
-          </span>
-        </h2>
-        <div class="messageText">
-          <%=item.text%>
-        </div>
-        <div class="embed">
-          <img src="<%=item.embedPath%>">
-        </div>
-      </div>
-    </div>
-    <br>
-    <%});%>
+	<% quote.messages.forEach(function(item){   %>
+	<div class="message">
+		<div class="avatar">
+			<img src="/assets/avatars/<%=item.sender%>.png">
+		</div>
+		<div class="contents">
+			<h2 class="nameHeader">
+				<!-- Set the color dynamically depending on the username (see quote.css)-->
+				<% let style = "color:var(--username-"+ item.sender + ")"; %>
+				<span class="username" style=<%=style%>>
+					<%=item.sender%>
+		  		</span>
+			</h2>
+			<div class="messageText">
+				<%=item.text%>
+			</div>
+			<div class="embed">
+				<img src="<%=item.embedPath%>">
+			</div>
+		</div>
+	</div>
+	<br>
+	<%});%>
 
   </div>
 </main>
 <footer>
-    <%- include ('partials/footer'); -%>
+	<%- include ('partials/footer'); -%>
 </footer>
 </body>
 </html>
