@@ -11,76 +11,29 @@
   <%- include ('partials/nav'); -%>
 </header>
 <main>
-
   <div class="quote">
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/avatars/david.png">
-      </div>
-      <div class="contents">
-        <h2 class="nameHeader">
-          <span class="username" style="color: var(--username-david)">
-            David
-          </span>
-        </h2>
-        <div class="messageText">
-          I ate a banana today
-        </div>
-      </div>
-    </div>
-    <br>
 
+    <% quote.messages.forEach(function(item){   %>
     <div class="message">
       <div class="avatar">
-        <img src="assets/avatars/matt.png">
+        <img src="/assets/avatars/<%=item.sender%>.png">
       </div>
       <div class="contents">
         <h2 class="nameHeader">
-          <span class="username" style="color: var(--username-matt)">
-            Matt
+          <span class="username" style="color: var(--username-<%=item.sender%>)">
+            <%=item.sender%>
           </span>
         </h2>
         <div class="messageText">
-          Zachs?
-        </div>
-      </div>
-    </div>
-    <br>
-
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/avatars/david.png">
-      </div>
-      <div class="contents">
-        <h2 class="nameHeader">
-          <span class="username" style="color: var(--username-david)">
-            David
-          </span>
-        </h2>
-        <div class="messageText">
-          My throat kinda hurts, but not that mu-
-        </div>
-      </div>
-    </div>
-    <br>
-
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/avatars/david.png">
-      </div>
-      <div class="contents">
-        <h2 class="nameHeader">
-          <span class="username" style="color: var(--username-david)">
-            David
-          </span>
-        </h2>
-        <div class="messageText">
+          <%=item.text%>
         </div>
         <div class="embed">
-          <img src="assets/embeds/quote12345david1.jpg">
+          <img src="<%=item.embedPath%>">
         </div>
       </div>
     </div>
+    <br>
+    <%});%>
 
   </div>
 </main>

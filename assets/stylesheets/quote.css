@@ -60,9 +60,12 @@ body{
   vertical-align: baseline;
   position: relative;
   overflow: hidden;
-  --username-jon: #02c700;
-  --username-matt: #c60101;
-  --username-david: #ffe300;
+  /* These names are used by the program, and thus need to be in this specific format */
+  --username-Jon: #02c700;
+  --username-Matt: #c60101;
+  --username-David: #ffe300;
+  --username-Kyle: #4452ff;
+  --username-Zach: #ff0061;
 }
 
 .messageText{
@@ -79,6 +82,7 @@ body{
 
 .embed img{
   height: 300px;
+  max-width: 500px;
 }
 
 .quote{
