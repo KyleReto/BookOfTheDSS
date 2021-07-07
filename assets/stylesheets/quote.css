@@ -9,6 +9,7 @@ body{
   margin: auto;
   width: 50%;
   line-height: 10px;
+  caret-color: transparent;
 }
 
 .message{
