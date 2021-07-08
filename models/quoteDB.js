@@ -23,12 +23,10 @@ let nextId = 0;
 class QuoteDB{
 	// Add a new quote to the database
 	static async addQuote(quote){
-		console.log('adding quote');
 		return new Promise((resolve, reject) => {
 			QuoteDB.updateNextId().then((data) => {
 				// naming variables is hard...
 				let quoteToSave = new QuoteModel({_id: nextId, quote: JSON.stringify(quote)});
-				console.log(quoteToSave);
 				quoteToSave.save().then(async (data) => {
 					resolve(nextId);
 				});

@@ -8,6 +8,8 @@ let urlencodedParser = bodyParser.urlencoded({ extended: false});
 let router = Express.Router();
 
 router.post('/newquote', urlencodedParser, async function(req, res){
+	// TODO: Revamp this method to allow for arbitrary quote lengths
+	// TODO: Add a password system, so that only authorized users can add quotes.
 	let message1 = new Message(req.body.sender1, req.body.message1);
 	let message2 = new Message(req.body.sender2, req.body.message2, req.body.embed2);
 	let quote = new Quote([message1, message2]);
