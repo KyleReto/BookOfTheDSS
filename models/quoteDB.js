@@ -30,7 +30,7 @@ class QuoteDB{
 				let quoteToSave = new QuoteModel({_id: nextId, quote: JSON.stringify(quote)});
 				console.log(quoteToSave);
 				quoteToSave.save().then(async (data) => {
-					resolve(true);
+					resolve(nextId);
 				});
 			}).catch((err) => {
 				return reject(err);
@@ -43,7 +43,6 @@ class QuoteDB{
 	static async getQuote(id){
 		return new Promise((resolve,reject) => {
 			QuoteModel.findById(id).then((data) => {
-				console.log(data);
 				let quote = Quote.deserialize(data.quote);
 				resolve(quote);
 			}).catch((err) => {

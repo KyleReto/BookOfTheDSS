@@ -28,9 +28,11 @@
 				<div class="messageText">
 					<%=item.text%>
 				</div>
+				<% if(typeof item.embedPath == 'string'){ %>
 				<div class="embed">
 					<img src="/assets/embeds/<%=item.embedPath%>">
 				</div>
+				<% } %>
 			</div>
 		</div>
 		<br>
