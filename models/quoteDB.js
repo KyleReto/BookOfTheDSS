@@ -51,11 +51,10 @@ class QuoteDB{
 
 	static getRandomID(){
 		// Get a random valid ID from the database
-		/*let message1 = new Message("Kyle", "Imagine having an MBA");
-		let message2 = new Message("Zach", "Wait, like, basketball?");
-		let message3 = new Message("David", "The largest basketball tournament in the mation");
-		let quote = new Quote([message1, message2, message3]);
-		return quote;*/
+		this.updateNextId();
+		// NextId is 1 after last valid, this will return anything below nextId, so no off-by-one (I hope)
+		let random = Math.floor(Math.random() * nextId);
+		return random;
 	}
 
 	// Updates the nextId variable to be the next free id.
