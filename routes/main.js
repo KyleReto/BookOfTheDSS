@@ -2,8 +2,7 @@ const Quote = require('../models/quote.js');
 const Message = require('../models/message.js');
 const QuoteDB = require('../models/quoteDB.js');
 const Express = require('express');
-const bodyParser = require('body-parser');
-let urlencodedParser = bodyParser.urlencoded({ extended: false});
+let urlencodedParser = Express.urlencoded({ extended: false});
 
 let router = Express.Router();
 
@@ -56,6 +55,7 @@ router.get('/quote/:id', async function(req, res){
 });
 
 router.get('/*', async function(req, res){
+	await QuoteDB.searchQuotes('gay');
 	res.render('index');
 });
 

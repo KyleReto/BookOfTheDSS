@@ -31,7 +31,7 @@ class QuoteDB{
 					resolve(nextId);
 				});
 			}).catch((err) => {
-				return reject(err);
+				reject(err);
 			});
 		});
 		
@@ -62,10 +62,26 @@ class QuoteDB{
 		});
 	}
 
+	// Searches all quotes for matching strings to the query
+	// Returns a map of IDs to matching quotes
+	static async searchQuotes(queryString){
+		return new Promise((resolve, reject) => {
+			QuoteModel.find({'quote': {'$regex': queryString}}).then((data) =>{
+				let map = new Map();
+				for (let i = 0; i < data.length; i++){
+					map.set(data[i]._id, Quote.deserialize(data[i].quote));
+				}
+				resolve(data);
+			}).catch((err) => {
+				reject(err);
+			})
+		});
+	}
+
 	static getRandomID(){
 		// Get a random valid ID from the database
 		this.updateNextId();
-		// NextId is 1 after last valid, this will return anything below nextId, so no off-by-one (I hope)
+		// NextId is 1 after last valid, this will return anything below nextId
 		let random = Math.floor(Math.random() * nextId);
 		return random;
 	}
