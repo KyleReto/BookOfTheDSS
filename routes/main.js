@@ -39,6 +39,10 @@ router.get('/addQuote', function(req, res){
 	res.render('submit');
 });
 
+router.get('/removeQuote', function(req, res){
+	res.render('removeQuote');
+});
+
 router.get('/quote', function(req, res){
 	res.redirect('/quote/' + QuoteDB.getRandomID().toString());
 });
