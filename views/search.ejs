@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/stylesheets/main.css">
+	<link rel="stylesheet" href="/assets/stylesheets/quote.css">
+	<title>Quote Search</title>
+</head>
+<body>
+<header>
+	<%- include ('partials/header'); -%>
+	<%- include ('partials/nav'); -%>
+</header>
+<main>
+	<form id="searchForm" method="GET" action="/search">
+		<label for="query">Search Query:</label>
+		<input type="text" name="query">
+		<input class="submitButton" type="submit" value="submit">
+	</form>
+
+	<% 
+	if (typeof quotes != 'undefined'){
+		quotes.forEach(function(quote, key){%>
+			<a href='/quote/<%=key%>'><div class="quote">
+				<% quote.messages.forEach(function(item){   %>
+				<div class="message">
+					<div class="avatar">
+						<img src="/assets/avatars/<%=item.sender%>.png">
+					</div>
+					<div class="contents">
+						<h2 class="nameHeader">
+							<!-- Set the color dynamically depending on the username (see quote.css)-->
+							<% let style = "color:var(--username-"+ item.sender + ")"; %>
+							<span class="username" style=<%=style%>>
+								<%=item.sender%>
+							</span>
+						</h2>
+						<div class="messageText">
+							<%=item.text%>
+						</div>
+						<% if(typeof item.embedPath == 'string'){ %>
+						<div class="embed">
+							<img src="/assets/embeds/<%=item.embedPath%>">
+						</div>
+						<% } %>
+					</div>
+				</div>
+				<br>
+				<%});%>
+
+			</div></a>
+			<br><br>
+		<% });
+	}%>
+</main>
+<footer>
+	<%- include ('partials/footer'); -%>
+</footer>
+</body>
+</html>

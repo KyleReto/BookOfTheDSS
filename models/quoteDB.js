@@ -66,12 +66,12 @@ class QuoteDB{
 	// Returns a map of IDs to matching quotes
 	static async searchQuotes(queryString){
 		return new Promise((resolve, reject) => {
-			QuoteModel.find({'quote': {'$regex': queryString}}).then((data) =>{
+			QuoteModel.find({'quote': {'$regex': queryString, $options: 'i'}}).then((data) =>{
 				let map = new Map();
 				for (let i = 0; i < data.length; i++){
 					map.set(data[i]._id, Quote.deserialize(data[i].quote));
 				}
-				resolve(data);
+				resolve(map);
 			}).catch((err) => {
 				reject(err);
 			})

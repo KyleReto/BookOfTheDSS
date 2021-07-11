@@ -42,6 +42,14 @@ router.get('/removeQuote', function(req, res){
 	res.render('removeQuote');
 });
 
+router.get('/search', async function(req, res){
+	await QuoteDB.searchQuotes(req.query.query).then((quotes) => {
+		return res.render('search', {quotes: quotes});
+	}).catch((err) => {
+		return res.send(err);
+	});
+});
+
 router.get('/quote', function(req, res){
 	res.redirect('/quote/' + QuoteDB.getRandomID().toString());
 });
