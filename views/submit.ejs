@@ -11,14 +11,14 @@
 	<%- include ('partials/nav'); -%>
 </header>
 <main>
-	<form id="submissionForm" method="POST" action="/newquote">
+	<form id="submissionForm" method="POST" action="/addquote">
 		<div id='formContainer' class='formContainer'>
-			<label for="sender0">Sender:</label>
-			<input type="text" name="sender1"><br>
-			<label for="message0">Message:</label>
-			<input type="text" name="message1"><br>
-			<label for="embed0">Embed File Name: </label>
-			<input type="text" name="embed1"><br>
+			<label for="sender">Sender:</label>
+			<input type="text" name="sender"><br>
+			<label for="message">Message:</label>
+			<input type="text" name="message"><br>
+			<label for="embed">Embed File Name: </label>
+			<input type="text" name="embed"><br>
 			<br>
 		</div>
 		<button id='addMessageBtn' type='button'>Add Message</button>
