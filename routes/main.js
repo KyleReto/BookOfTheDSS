@@ -26,21 +26,29 @@ router.post('/addquote', urlencodedParser, async function(req, res){
 	}
 	let quote = new Quote(messages);
 	let id = await QuoteDB.addQuote(quote);
-	console.log(quote);
 	res.redirect('/quote/' + id);
+});
+
+router.post('/removeQuote', urlencodedParser, async function(req, res){
+	if (req.body.password != 'KhK39vyZaBgg4V3') return res.send('Error: Invalid');
+	let result = await QuoteDB.removeQuote(req.body.id);
+	res.send(result);
 });
 
 router.get('/addQuote', function(req, res){
 	res.render('submit');
-})
+});
 
 router.get('/quote', function(req, res){
 	res.redirect('/quote/' + QuoteDB.getRandomID().toString());
 });
 
 router.get('/quote/:id', async function(req, res){
-	let quote = await QuoteDB.getQuote(req.params.id);
-	return res.render('quote',{quote: quote});
+	await QuoteDB.getQuote(req.params.id).then((quote) => {
+		return res.render('quote',{quote: quote});
+	}).catch(() => {
+		return res.send('Sorry, that quote doesn\'t exist');
+	});
 });
 
 router.get('/*', async function(req, res){
