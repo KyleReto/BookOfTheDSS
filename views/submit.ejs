@@ -12,68 +12,22 @@
 </header>
 <main>
 	<form id="submissionForm" method="POST" action="/newquote">
-		<div class='formContainer'>
-			<label for="sender1">Sender:</label>
+		<div id='formContainer' class='formContainer'>
+			<label for="sender0">Sender:</label>
 			<input type="text" name="sender1"><br>
-			<label for="message1">Message:</label>
+			<label for="message0">Message:</label>
 			<input type="text" name="message1"><br>
-			<label for="embed1">Embed Path: </label>
+			<label for="embed0">Embed File Name: </label>
 			<input type="text" name="embed1"><br>
 			<br>
-			<label for="sender2">Sender:</label>
-			<input type="text" name="sender2"><br>
-			<label for="message2">Message:</label>
-			<input type="text" name="message2"><br>
-			<label for="embed2">Embed Path: </label>
-			<input type="text" name="embed2"><br>
-			<br>
-			<label for="sender3">Sender:</label>
-			<input type="text" name="sender3"><br>
-			<label for="message3">Message:</label>
-			<input type="text" name="message3"><br>
-			<label for="embed3">Embed Path: </label>
-			<input type="text" name="embed3"><br>
-			<br>
-			<label for="sender4">Sender:</label>
-			<input type="text" name="sender4"><br>
-			<label for="message4">Message:</label>
-			<input type="text" name="message4"><br>
-			<label for="embed4">Embed Path: </label>
-			<input type="text" name="embed4"><br>
-			<br>
-			<label for="sender5">Sender:</label>
-			<input type="text" name="sender5"><br>
-			<label for="message5">Message:</label>
-			<input type="text" name="message5"><br>
-			<label for="embed5">Embed Path: </label>
-			<input type="text" name="embed5"><br>
-			<br>
-			<label for="sender6">Sender:</label>
-			<input type="text" name="sender6"><br>
-			<label for="message6">Message:</label>
-			<input type="text" name="message6"><br>
-			<label for="embed6">Embed Path: </label>
-			<input type="text" name="embed6"><br>
-			<br>
-			<label for="sender7">Sender:</label>
-			<input type="text" name="sender7"><br>
-			<label for="message7">Message:</label>
-			<input type="text" name="message7"><br>
-			<label for="embed7">Embed Path: </label>
-			<input type="text" name="embed7"><br>
-			<br>
-			<label for="sender8">Sender:</label>
-			<input type="text" name="sender8"><br>
-			<label for="message8">Message:</label>
-			<input type="text" name="message8"><br>
-			<label for="embed8">Embed Path: </label>
-			<input type="text" name="embed8"><br>
 		</div>
+		<button id='addMessageBtn' type='button'>Add Message</button>
 		<input class="submitButton" type="submit" value="submit">
 	</form>
 </main>
 <footer>
 	<%- include ('partials/footer'); -%>
+	<script src='/assets/scripts/AddQuote.js' type='text/javascript'></script>
 </footer>
 </body>
 </html>
