@@ -8,7 +8,9 @@ let urlencodedParser = bodyParser.urlencoded({ extended: false});
 let router = Express.Router();
 
 router.post('/addquote', urlencodedParser, async function(req, res){
-	// TODO: Add a password system, so that only authorized users can add quotes.
+	// If password isn't correct, give an error.
+	// Note: This isn't actually very secure, but it'll do for this purpose.
+	if (req.body.password != 'KhK39vyZaBgg4V3') return res.send('Error: Invalid Password');
 	let messages = [];
 	// For each message in the request
 	for (let i = 0; i < req.body.sender.length; i++){
