@@ -49,6 +49,19 @@ class QuoteDB{
 		});
 	}
 
+	// Remove a given quote by its ID.
+	// Note: This also resets nextId to enable replacing said quote
+	static async removeQuote(id){
+		return new Promise((resolve, reject) => {
+			QuoteModel.deleteOne({_id: id}).then((data) => {
+				nextId = id;
+				resolve(data);
+			}).catch((err) => {
+				reject(err);
+			});
+		});
+	}
+
 	static getRandomID(){
 		// Get a random valid ID from the database
 		this.updateNextId();
