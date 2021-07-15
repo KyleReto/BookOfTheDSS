@@ -10,6 +10,7 @@ class Message{
     // embedPath is null instead of undefined if nonexistent
     typeof embedPath === 'undefined' ? this.embedPath = null : this.embedPath = embedPath
   }
+
   // This class should have no instance (non-static) methods,
   // as it's purely to store data and will be serialized frequently
 }

@@ -77,6 +77,10 @@ body{
   --username-Nicc: #da004e;
 }
 
+.username:hover{
+  text-decoration: underline;
+}
+
 .messageText{
   user-select: text;
   margin-left: calc(0px - var(--avatar-message-distance));
