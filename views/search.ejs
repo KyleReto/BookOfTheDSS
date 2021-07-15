@@ -21,34 +21,9 @@
 	<% 
 	if (typeof quotes != 'undefined'){
 		quotes.forEach(function(quote, key){%>
-			<a href='/quote/<%=key%>'><div class="quote">
-				<% quote.messages.forEach(function(item){   %>
-				<div class="message">
-					<div class="avatar">
-						<img src="/assets/avatars/<%=item.sender%>.png">
-					</div>
-					<div class="contents">
-						<h2 class="nameHeader">
-							<!-- Set the color dynamically depending on the username (see quote.css)-->
-							<% let style = "color:var(--username-"+ item.sender + ")"; %>
-							<span class="username" style=<%=style%>>
-								<%=item.sender%>
-							</span>
-						</h2>
-						<div class="messageText">
-							<%=item.text%>
-						</div>
-						<% if(typeof item.embedPath == 'string'){ %>
-						<div class="embed">
-							<img src="/assets/embeds/<%=item.embedPath%>">
-						</div>
-						<% } %>
-					</div>
-				</div>
-				<br>
-				<%});%>
-
-			</div></a>
+			<a href='/quote/<%=key%>'>
+				<%- include ('partials/quote', {quote: quote}); -%>
+			</a>
 			<br><br>
 		<% });
 	}%>

@@ -43,6 +43,7 @@ router.get('/removeQuote', function(req, res){
 });
 
 router.get('/search', async function(req, res){
+	if (typeof req.query.query === 'undefined') return res.render('search');
 	await QuoteDB.searchQuotes(req.query.query).then((quotes) => {
 		return res.render('search', {quotes: quotes});
 	}).catch((err) => {
@@ -63,8 +64,7 @@ router.get('/quote/:id', async function(req, res){
 });
 
 router.get('/*', async function(req, res){
-	await QuoteDB.searchQuotes('gay');
-	res.render('index');
+	res.redirect('/quote/' + QuoteDB.getRandomID().toString());
 });
 
 module.exports = router

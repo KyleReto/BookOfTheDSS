@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/assets/stylesheets/quote.css">
+	<link rel="stylesheet" href="/assets/stylesheets/main.css">
 	<title>Home</title>
 </head>
 <body>
@@ -11,34 +12,7 @@
 	<%- include ('partials/nav'); -%>
 </header>
 <main>
-	<div class="quote">
-		<% quote.messages.forEach(function(item){   %>
-		<div class="message">
-			<div class="avatar">
-				<img src="/assets/avatars/<%=item.sender%>.png">
-			</div>
-			<div class="contents">
-				<h2 class="nameHeader">
-					<!-- Set the color dynamically depending on the username (see quote.css)-->
-					<% let style = "color:var(--username-"+ item.sender + ")"; %>
-					<span class="username" style=<%=style%>>
-						<%=item.sender%>
-					</span>
-				</h2>
-				<div class="messageText">
-					<%=item.text%>
-				</div>
-				<% if(typeof item.embedPath == 'string'){ %>
-				<div class="embed">
-					<img src="/assets/embeds/<%=item.embedPath%>">
-				</div>
-				<% } %>
-			</div>
-		</div>
-		<br>
-		<%});%>
-
-	</div>
+	<%- include ('partials/quote'); -%>
 	<a href='/quote'>Get a new random quote</a>
 </main>
 <footer>

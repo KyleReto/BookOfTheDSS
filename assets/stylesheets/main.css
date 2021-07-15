@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+}
+
+header {
+    background-color: #202225;
+    padding: 1em;
+    border-bottom: ridge;
+    border-bottom-color: #4f545c;
+    border-bottom-width: thick;
+}
+
+.tab {
+    padding: 20px 35px 15px 35px;
+    font-size: 1.2em;
+	font-family: Ginto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+}
+.tabContainer {
+    height: 3em;
+    width: 75%;
+    display:flex;
+    align-items:center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+	display: flex;
+}
+
+a:hover {
+    color: #999999;
+}
+
+.logo {
+	width: 65px;
+	display: flex;
+}
+
+.logoContainer {
+	width: 100px;
+}
