@@ -14,7 +14,10 @@
 <main>
 	<form id="searchForm" method="GET" action="/search">
 		<label for="query">Search Query:</label>
-		<input type="text" name="query">
+		<% if (typeof query != 'string'){
+			query = '';
+		}%>
+		<input type="text" name="query" value=<%=query%>>
 		<input class="submitButton" type="submit" value="submit">
 	</form>
 

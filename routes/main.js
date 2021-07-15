@@ -45,10 +45,14 @@ router.get('/removeQuote', function(req, res){
 router.get('/search', async function(req, res){
 	if (typeof req.query.query === 'undefined') return res.render('search');
 	await QuoteDB.searchQuotes(req.query.query).then((quotes) => {
-		return res.render('search', {quotes: quotes});
+		return res.render('search', {quotes: quotes, query:req.query.query});
 	}).catch((err) => {
-		return res.send(err);
+		return res.send("Sorry, something went wrong. Try again later.");
 	});
+});
+
+router.get('/profiles/:name', function(req, res){
+	res.redirect('/search?query=' + req.params.name);
 });
 
 router.get('/quote', function(req, res){
