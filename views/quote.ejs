@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/assets/stylesheets/quote.css">
 	<link rel="stylesheet" href="/assets/stylesheets/main.css">
-	<title>Home</title>
+	<title>Book of the DSS</title>
 </head>
 <body>
 <header>
@@ -12,7 +12,9 @@
 	<%- include ('partials/nav'); -%>
 </header>
 <main>
-	<%- include ('partials/quote'); -%>
+	<div class='quoteContainer'>
+		<%- include ('partials/quote', {linksEnabled: true}); -%>
+	</div>
 </main>
 <footer>
 	<%- include ('partials/footer'); -%>

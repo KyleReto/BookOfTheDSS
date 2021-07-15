@@ -8,6 +8,14 @@ header {
     border-bottom: ridge;
     border-bottom-color: #4f545c;
     border-bottom-width: thick;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+main{
+    padding-top: 80px;
+    text-align: center;
 }
 
 .tab {
@@ -39,4 +47,50 @@ a:hover {
 
 .logoContainer {
 	width: 100px;
+}
+
+.searchQuery{
+    padding-right: 30px;
+    background-color: #36393f;
+    color: #dcddde;
+    border: 0;
+    font-size: 14px;
+    height: 30px;
+    width: 210px;
+}
+
+.searchSubmit{
+    position: relative;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: -30px;
+    top: 4px;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #dcddde;
+}
+
+.searchSubmit:hover{
+    cursor:pointer;
+}
+
+.quoteContainer{
+    display: inline-block;
+    width: 50%;
+    margin: auto;
+}
+
+.searchQuote{
+    display: inline-block;
+    width: 50%;
+    margin: auto;
+    padding: 0 25px;
+    border-style: groove;
+}
+
+#searchForm{
+    position: fixed;
+    width: 250px;
+    right: 2%;
 }

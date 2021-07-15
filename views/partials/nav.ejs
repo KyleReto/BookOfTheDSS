@@ -6,6 +6,13 @@
 			</div>
 		</a>
         <a class="tab" href="/quote">Random Quote</a>
-        <a class="tab" href="/search">Search</a>
+		
+	<form id="searchForm" method="GET" action="/search">
+		<% if (typeof query != 'string'){
+			query = '';
+		}%>
+		<input class='searchQuery' type="text" name="query" placeholder='Search' value=<%=query%>>
+		<input class="searchSubmit" type="submit" value="&telrec;">
+	</form>
     </nav>
 </div>

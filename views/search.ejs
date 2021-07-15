@@ -4,30 +4,24 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/assets/stylesheets/main.css">
 	<link rel="stylesheet" href="/assets/stylesheets/quote.css">
+	<link rel="stylesheet" href="/assets/stylesheets/search.css">
 	<title>Quote Search</title>
 </head>
 <body>
 <header>
-	<%- include ('partials/header'); -%>
-	<%- include ('partials/nav'); -%>
+	<%- include ('partials/header'); %>
+	<%- include ('partials/nav'); %>
 </header>
 <main>
-	<form id="searchForm" method="GET" action="/search">
-		<label for="query">Search Query:</label>
-		<% if (typeof query != 'string'){
-			query = '';
-		}%>
-		<input type="text" name="query" value=<%=query%>>
-		<input class="submitButton" type="submit" value="submit">
-	</form>
-
 	<% 
 	if (typeof quotes != 'undefined'){
 		quotes.forEach(function(quote, key){%>
 			<a href='/quote/<%=key%>'>
-				<%- include ('partials/quote', {quote: quote}); -%>
+				<div class="searchQuote">
+				<%- include ('partials/quote', {quote: quote, linksEnabled: false}); -%>
+				</div>
 			</a>
-			<br><br>
+			<br>
 		<% });
 	}%>
 </main>

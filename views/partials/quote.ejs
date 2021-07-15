@@ -1,21 +1,30 @@
 <div class="quote">
 	<% quote.messages.forEach(function(item){   %>
 	<div class="message">
+		<%
+			// You can't put a link on a link with ejs, so this prevents that)
+			// I promise you this is the most clean way to write this, if I want to keep this as a universally applicable template
+			if (linksEnabled === true){
+		%>
 		<a href="/profiles/<%=item.sender%>">
+			<%}%>
 			<div class="avatar">
 				<!-- Strictly speaking, this is vulnerable to path traversal attacks. It's a feature, not a bug. -->
 				<img src="/assets/avatars/<%=item.sender%>.png">
 			</div>
-		</a>
+		<%if (linksEnabled === true){%>
+		</a> <%}%>
 		<div class="contents">
 			<h2 class="nameHeader">
 				<!-- Set the color dynamically depending on the username (see quote.css) -->
 				<% let style = "color:var(--username-"+ item.sender + ")"; %>
-				<a href="/profiles/<%=item.sender%>">
-					<span class="username" style=<%=style%>>
+				<%if (linksEnabled === true){%>
+				<a href="/profiles/<%=item.sender%>"><%}%>
+					<span class="username" style= <%=style%> >
 						<%=item.sender%>
 					</span>
-				</a>
+				<%if (linksEnabled === true){%>
+				</a><%}%>
 			</h2>
 			<div class="messageText">
 				<%=item.text%>
