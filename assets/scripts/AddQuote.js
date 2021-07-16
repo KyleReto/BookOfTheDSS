@@ -11,6 +11,8 @@ function addMessage(){
 	// This is kind of absurd, I realize, but it is what it is.
 	let contentsDiv = $('<div class="avatar"><img src="/assets/avatars/default.png"></div><div class="contents"><h2 class="nameHeader"><input type="text" name="sender" placeholder="IRL First Name" class="username"></h2><div class="messageText"><textarea rows="14" cols="10" wrap="soft" name="message" placeholder="Message text" class="messageText"></textarea></div><div class="embed"><input type="text" name="embed" placeholder= "ImageEmbedFile.jpg (optional)" class="embedInput"></div></div><br>');
 	container.append(contentsDiv);
+	$(".username").change(changeUsername);
+	$(".embedInput").change(reloadEmbed);
 }
 
 // Update username color and avatar image on username change
