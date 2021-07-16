@@ -1,9 +1,12 @@
-#submissionForm{
-	text-align: left;
+label{
+	font-weight: bold;
+	font-size:medium;
+	color: #dcddde;
+	font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-label{
-	display: none;
+#submissionForm{
+	text-align: left;
 }
 
 #submissionForm input, #submissionForm textarea {
@@ -19,7 +22,7 @@ label{
 }
 
 #submissionForm textarea{
-	height: 60px;
+	height: 40px;
 }
 
 .messageText{
@@ -28,4 +31,17 @@ label{
 
 .avatar{
 	padding-top: 5px;
+}
+
+.submitButton, #addMessageBtn{
+	background-color: rgb(117, 81, 245);
+	border-style: none;
+	border-radius: 5%;
+	margin-top: 20px;
+	padding: 10px;
+	width: 570px;
+	font-weight: bold;
+	font-size:medium;
+	color: #dcddde;
+	font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
