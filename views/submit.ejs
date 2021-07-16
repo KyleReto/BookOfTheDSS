@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/assets/stylesheets/main.css">
+	<link rel="stylesheet" href="/assets/stylesheets/submit.css">
+	<link rel="stylesheet" href="/assets/stylesheets/quote.css">
 	<title>Quote Submission</title>
 </head>
 <body>
@@ -11,31 +13,52 @@
 	<%- include ('partials/nav'); -%>
 </header>
 <main>
-	<form id="submissionForm" method="POST" action="/addquote">
-		<div id='formContainer' class='formContainer'>
-			<label for="password">Password: </label>
-			<input type="password" name="password">
-			<!-- "Style your forms properly!" "haha <br> go brr"-->
-			<br><br>
-			<label for="sender">Sender:</label>
-			<input type="text" name="sender"><br>
-			<label for="message">Message:</label>
-			<input type="text" name="message"><br>
-			<label for="embed">Embed File Name: </label>
-			<input type="text" name="embed"><br>
-			<!-- default is two messages for ease of backend development -->
-			<!-- yes, this is just because I'm being lazy -->
-			<label for="sender">Sender:</label>
-			<input type="text" name="sender"><br>
-			<label for="message">Message:</label>
-			<input type="text" name="message"><br>
-			<label for="embed">Embed File Name: </label>
-			<input type="text" name="embed"><br>
-			<br>
-		</div>
-		<button id='addMessageBtn' type='button'>Add Message</button>
-		<input class="submitButton" type="submit" value="submit">
-	</form>
+	<div class='quoteContainer'>
+		<form id="submissionForm" method="POST" action="/addquote">
+			<div class="formContainer" id="formContainer">
+				<input type="password" name="password" placeholder="password">
+				<!-- "Style your forms properly!" "haha <br> go brr"-->
+				<br><br>
+				<div class="avatar">
+					<img src="/assets/avatars/Kyle.png">
+				</div>
+				<div class="contents">
+					<h2 class="nameHeader">
+						<div class="username">
+							<input type="text" name="sender" placeholder="Kyle" class="username"><br>
+						</div>
+					</h2>
+					<div class="messageText">
+						<textarea rows="14" cols="10" wrap="soft" name="message" placeholder="Test Message" class="messageText"></textarea>
+					</div>
+					<div class="embed">
+						<input type="text" name="embed" placeholder= "ImageEmbedFile.jpg"><br>
+						<img src="/assets/embeds/GodYourePathetic.jpg">
+					</div>
+				</div>
+				<br>
+				<div class="avatar">
+					<img src="/assets/avatars/Kyle.png">
+				</div>
+				<div class="contents">
+					<h2 class="nameHeader">
+						<div class="username">
+							<input type="text" name="sender" placeholder="Kyle" class="username" ><br>
+						</div>
+					</h2>
+					<div class="messageText">
+						<textarea rows="14" cols="10" wrap="soft" name="message" placeholder="Test Message" class="messageText"></textarea>
+					</div>
+					<div class="embed">
+						<input type="text" name="embed" placeholder= "ImageEmbedFile.jpg"><br>
+						<img src="/assets/embeds/GodYourePathetic.jpg">
+					</div>
+				</div>
+			</div>
+			<button id='addMessageBtn' type='button'>Add Message</button>
+			<input class="submitButton" type="submit" value="submit">
+		</form>
+	</div>
 </main>
 <footer>
 	<%- include ('partials/footer'); -%>
