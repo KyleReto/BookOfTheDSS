@@ -44,6 +44,7 @@ class QuoteDB{
 				let quote = Quote.deserialize(data.quote);
 				resolve(quote);
 			}).catch((err) => {
+				console.log(err);
 				reject(err);
 			});
 		});

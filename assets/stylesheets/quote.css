@@ -2,6 +2,10 @@ body{
   background-color: #36393f;
 }
 
+p{
+  margin: 0;
+}
+
 .quote{
   padding-top: 20px;
   background-color: #36393f;
