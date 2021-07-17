@@ -15,7 +15,10 @@
 		</a> <%}%>
 		<div class="contents">
 			<h2 class="nameHeader">
-				<% let style = "color:var(--username-"+ item.sender + ")"; %>
+				<% 
+				let string = item.sender.replace(/[^a-zA-Z ]/g, "");
+				let style = "color:var(--username-"+ string + ")"; 
+				%>
 				<%if (linksEnabled === true){%>
 				<a href="/profiles/<%=item.sender%>"><%}%>
 					<span class="username" style= <%=style%> >
