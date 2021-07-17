@@ -14,8 +14,8 @@ router.post('/addquote', urlencodedParser, async function(req, res){
 	let messages = [];
 	// For each message in the request
 	for (let i = 0; i < req.body.sender.length; i++){
-		// If there's no text (message is empty/invalid), continue
-		if (req.body.message[i] == '') continue
+		// If there's no text and no embed (message is empty/invalid), continue
+		if (req.body.message[i] == '' && req.body.embed[i] == '') continue
 
 		let message = new Message(req.body.sender[i], req.body.message[i], req.body.embed[i]);
 		// Null the embed if it's nonexistent
