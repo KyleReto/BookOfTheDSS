@@ -112,3 +112,9 @@ p{
 .quote{
   --text-normal: #dcddde;
 }
+
+.emoji{
+  height: 1.4rem;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}

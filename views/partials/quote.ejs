@@ -9,14 +9,12 @@
 		<a href="/profiles/<%=item.sender%>">
 			<%}%>
 			<div class="avatar">
-				<!-- Strictly speaking, this is vulnerable to path traversal attacks. It's a feature, not a bug. -->
 				<img src="/assets/avatars/<%=item.sender%>.png">
 			</div>
 		<%if (linksEnabled === true){%>
 		</a> <%}%>
 		<div class="contents">
 			<h2 class="nameHeader">
-				<!-- Set the color dynamically depending on the username (see quote.css) -->
 				<% let style = "color:var(--username-"+ item.sender + ")"; %>
 				<%if (linksEnabled === true){%>
 				<a href="/profiles/<%=item.sender%>"><%}%>
@@ -31,7 +29,6 @@
 			</div>
 			<% if(typeof item.embedPath == 'string'){ %>
 			<div class="embed">
-				<!-- Path traversal here too. -->
 				<img src="/assets/embeds/<%=item.embedPath%>">
 			</div>
 			<% } %>

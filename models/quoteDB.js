@@ -42,9 +42,9 @@ class QuoteDB{
 		return new Promise((resolve,reject) => {
 			QuoteModel.findById(id).then((data) => {
 				let quote = Quote.deserialize(data.quote);
+				quote.format();
 				resolve(quote);
 			}).catch((err) => {
-				console.log(err);
 				reject(err);
 			});
 		});
