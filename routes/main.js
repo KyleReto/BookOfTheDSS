@@ -1,6 +1,7 @@
 const Quote = require('../models/quote.js');
 const Message = require('../models/message.js');
 const QuoteDB = require('../models/quoteDB.js');
+const config = require('../config.js');
 const Express = require('express');
 let urlencodedParser = Express.urlencoded({ extended: false});
 
@@ -9,7 +10,7 @@ let router = Express.Router();
 router.post('/addquote', urlencodedParser, async function(req, res){
 	// If password isn't correct, give an error.
 	// Note: This isn't actually very secure, but it'll do for this purpose.
-	if (req.body.password != 'KhK39vyZaBgg4V3') return res.send('Error: Invalid Password');
+	if (req.body.password != config.adminPass) return res.send('Error: Invalid Password');
 	let messages = [];
 	// For each message in the request
 	for (let i = 0; i < req.body.sender.length; i++){
@@ -29,7 +30,7 @@ router.post('/addquote', urlencodedParser, async function(req, res){
 });
 
 router.post('/removeQuote', urlencodedParser, async function(req, res){
-	if (req.body.password != 'KhK39vyZaBgg4V3') return res.send('Error: Invalid');
+	if (req.body.password != config.adminPass) return res.send('Error: Invalid');
 	let result = await QuoteDB.removeQuote(req.body.id);
 	res.send(result);
 });
