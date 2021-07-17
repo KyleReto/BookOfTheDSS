@@ -17,6 +17,8 @@ body{
   padding-top: .125rem;
   padding-bottom:.125rem;
   font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .avatar{
@@ -36,7 +38,8 @@ body{
   margin: 0;
   padding: 0;
   border: 0;
-  max-width: 87%;
+  max-width: 80%;
+  white-space:normal;
 }
 
 .avatar img{
@@ -94,12 +97,12 @@ body{
 }
 
 .embed img{
-  height: 300px;
-  max-width: 500px;
+  height: 100%;
+  max-width: 100%;
 }
 
 .embed {
-  display: block;
+  display: inline-block;
 }
 
 .quote{
