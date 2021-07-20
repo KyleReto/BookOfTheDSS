@@ -103,6 +103,10 @@ a:hover {
 .prevQuote, .nextQuote{
     font-size:12em;
     display: flex;
+    background-color: transparent;
+    border: 0;
+    color: #dcddde;
+    padding: 0 20px;
 }
 
 .quoteButtonsContainer{
