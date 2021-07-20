@@ -8,3 +8,6 @@ The site should be a fun little site to entertain someone (mainly other DSS memb
 
 ### Running the site
 To run the site, grab a terminal of your choice and Node.js. Then, in that terminal, navigate to the site's folder and run app.js via node (`node app.js`). Install any necessary packages (try `npm install`), and the site should be accessible at `localhost:3000` in your web browser.
+
+### Configuring the site
+Check out the config.js file. You can edit the various configurable variables from there.
