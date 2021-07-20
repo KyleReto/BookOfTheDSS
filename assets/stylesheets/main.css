@@ -77,9 +77,13 @@ a:hover {
 }
 
 .quoteContainer{
-    display: inline-block;
-    width: 50%;
     margin: auto;
+    z-index: 2;
+    display: flex;
+    padding-right: 1em;
+    margin-top: 0;
+    flex-basis: 400px;
+    flex-shrink: 0;
 }
 
 .searchQuote{
@@ -94,4 +98,16 @@ a:hover {
     position: fixed;
     width: 250px;
     right: 2%;
+}
+
+.prevQuote, .nextQuote{
+    font-size:12em;
+    display: flex;
+}
+
+.quoteButtonsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
 }

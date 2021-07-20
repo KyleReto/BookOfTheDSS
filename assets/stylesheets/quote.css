@@ -42,8 +42,6 @@ p{
   margin: 0;
   padding: 0;
   border: 0;
-  max-width: 80%;
-  white-space:normal;
 }
 
 .avatar img{
@@ -110,6 +108,7 @@ p{
 
 .embed {
   display: inline-block;
+  max-width: 75%;
 }
 
 .quote{
