@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const mainRouter = require('./routes/main.js');
+const config = require('./config.js');
 
 var app = express();
 
@@ -10,4 +11,4 @@ app.use('/assets/', express.static(path.join(__dirname, 'assets')));
 app.use('/favicon.ico', express.static('assets/favicon.ico'));
 app.use('/', mainRouter);
 
-app.listen(3000);
+app.listen(config.listenPort);
