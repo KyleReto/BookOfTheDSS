@@ -69,7 +69,7 @@ router.get('/quote/:id', async function(req, res){
 });
 
 router.get('/*', async function(req, res){
-	res.redirect('/quote/' + QuoteDB.getRandomID().toString());
+	res.render('index');
 });
 
 module.exports = router
