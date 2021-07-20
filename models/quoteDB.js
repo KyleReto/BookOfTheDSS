@@ -40,9 +40,11 @@ class QuoteDB{
 	// Get a specified quote by its ID. Returns promise that resolves with the quote.
 	static async getQuote(id){
 		return new Promise((resolve,reject) => {
-			QuoteModel.findById(id).then((data) => {
+			QuoteModel.findById(id).then(async (data) => {
 				let quote = Quote.deserialize(data.quote);
 				quote.format();
+				quote.prevExists = await this.isIdValid(parseInt(id) - 1);
+				quote.nextExists = await this.isIdValid(parseInt(id) + 1);
 				resolve(quote);
 			}).catch((err) => {
 				reject(err);
@@ -76,6 +78,21 @@ class QuoteDB{
 			}).catch((err) => {
 				reject(err);
 			})
+		});
+	}
+
+	static isIdValid(id){
+		return new Promise((resolve, reject) => {
+			QuoteModel.countDocuments({_id: id}, function (err, count){
+				// I could cast the count directly to a bool, but this could be confusing on falsy values.
+				if (count > 0){
+					resolve(true);
+				} else {
+					resolve(false);
+				}
+			}).catch((err) => {
+				reject(err);
+			});
 		});
 	}
 

@@ -10,9 +10,22 @@
 	<%- include ('partials/nav'); -%>
 </header>
 <main>
+	<% 
+		// Make next/prev buttons visible if those quotes exist
+		let leftVisibility = 'hidden';
+		let rightVisibility = 'hidden';
+		if (quote.prevExists) leftVisibility = 'visible';
+		if (quote.nextExists) rightVisibility = 'visible';
+	%> 
+	<a href='/quote/<%=id - 1 %>'style="visibility:<%=leftVisibility%>">
+		LEFT BUTTON
+	</a>
 	<div class='quoteContainer'>
 		<%- include ('partials/quote', {linksEnabled: true}); -%>
 	</div>
+	<a href='/quote/<%=parseInt(id) + 1 %>'style="visibility:<%=rightVisibility%>">
+		RIGHT BUTTON
+	</a>
 </main>
 <footer>
 	<%- include ('partials/footer'); -%>

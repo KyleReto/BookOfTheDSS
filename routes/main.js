@@ -62,7 +62,7 @@ router.get('/quote', function(req, res){
 
 router.get('/quote/:id', async function(req, res){
 	await QuoteDB.getQuote(req.params.id).then((quote) => {
-		return res.render('quote',{quote: quote});
+		return res.render('quote',{quote: quote, id: req.params.id});
 	}).catch(() => {
 		return res.send('Sorry, that quote doesn\'t exist');
 	});
