@@ -72,7 +72,9 @@ class QuoteDB{
 			QuoteModel.find({'quote': {'$regex': queryString, $options: 'i'}}).then((data) =>{
 				let map = new Map();
 				for (let i = 0; i < data.length; i++){
-					map.set(data[i]._id, Quote.deserialize(data[i].quote));
+					let quote = Quote.deserialize(data[i].quote);
+					quote.format();
+					map.set(data[i]._id, quote);
 				}
 				resolve(map);
 			}).catch((err) => {
