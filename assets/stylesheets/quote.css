@@ -44,6 +44,7 @@ p{
   border: 0;
   max-width: 45rem;
   white-space: normal;
+  margin-right: 50px;
 }
 
 .avatar img{
@@ -104,7 +105,7 @@ p{
 }
 
 .embed img{
-  height: 100%;
+  width: 100%;
   max-width: 100%;
 }
 
