@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<link rel="stylesheet" href="../assets/stylesheets/profile.css">
     <%- include ('partials/head'); -%>
 </head>
 <body>
@@ -9,11 +10,23 @@
   <%- include ('partials/nav'); -%>
 </header>
 <main>
-    <div>
+    <div class="white">
 		<p>This site is a celebration of 7 years of history and a compilation of things we've said.</p>
 		<img src="../assets/dsslogo.png" style="height:300px;">
 		<br>
-		<h2>DSS Members</h2>
+		<h1>DSS Members</h1>
+		<table>
+			<tr>
+				<th><img class="pfp" src="../assets/avatars/kyle.png"></th>
+				<th>Kyle</th>
+				<th><img class="chart" src="../assets/charts/kyle_chart.png"></th>
+			</tr>
+			<tr>
+				<th><img class="pfp" src="../assets/avatars/jayson.png"></th>
+				<th>Jayson</th>
+				<th><img class="chart" src="../assets/charts/jayson_chart.png"></th>
+			</tr>
+		</table>
     </div>
 </main>
 <footer>
