@@ -2,6 +2,6 @@
 let config = {};
 
 config.adminPass = "";
-config.listenPort = "3000";
+config.listenPort = "10032";
 
 module.exports = config;
