@@ -1,6 +1,7 @@
 const Quote = require('../models/quote.js');
 const Message = require('../models/message.js');
 const QuoteDB = require('../models/quoteDB.js');
+const ProfileDB = require('../models/profileDB.js');
 const config = require('../config.js');
 const Express = require('express');
 let urlencodedParser = Express.urlencoded({ extended: false});
@@ -78,6 +79,10 @@ router.get('/minimal/:id', async function(req, res){
 		console.log(err);
 		return res.send('Sorry, that quote doesn\'t exist');
 	});
+});
+
+router.get('/populateProfiles', async function(req, res){
+	res.send(ProfileDB.setJSONFile());
 });
 
 router.get('/*', async function(req, res){
