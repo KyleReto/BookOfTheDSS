@@ -1,5 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+	/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+	function toggleResponsive() {
+		var x = document.getElementById("topnav");
+		if (x.className === "tabContainer") {
+			x.className += " responsive";
+		} else {
+			x.className = "tabContainer";
+		}
+	} 
+</script>
+
 <div class="lowerHeaderContainer">
-    <nav class="tabContainer">
+    <nav class="tabContainer" id='topnav'>	
+		<a href="javascript:void(0);" class="icon" onclick="toggleResponsive()">
+			<i class="fa fa-bars"></i>
+		</a>
 		<a href="/">
 			<div class="logoContainer">
 				<img src='/assets/logo.png' class='logo'>
