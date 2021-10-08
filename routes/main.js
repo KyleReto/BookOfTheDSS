@@ -63,18 +63,7 @@ router.get('/quote', function(req, res){
 
 router.get('/quote/:id', async function(req, res){
 	QuoteDB.getQuote(req.params.id).then((quote) => {
-		return res.render('quote', {quote: quote, id: req.params.id, ogImage: 'renderedQuotes/' + req.params.id + '.png'});
-	}).catch((err) => {
-		console.log(err);
-		return res.send('Sorry, that quote doesn\'t exist');
-	});
-});
-
-// This page exists to allow for screenshots to each of the pages on the website, for open graph purposes
-// I attempted to automate this process, but it was more trouble than it was worth.
-router.get('/minimal/:id', async function(req, res){
-	QuoteDB.getQuote(req.params.id).then((quote) => {
-		return res.render('minimal', {quote: quote, id: req.params.id});
+		return res.render('quote', {quote: quote, id: req.params.id, avatars: config.avatars});
 	}).catch((err) => {
 		console.log(err);
 		return res.send('Sorry, that quote doesn\'t exist');
