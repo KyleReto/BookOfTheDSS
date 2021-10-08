@@ -9,7 +9,12 @@
 		<a href="/profiles/<%=item.sender%>">
 			<%}%>
 			<div class="avatar">
-				<%let imageName = avatars[item.sender]
+				<%
+				// Strip special characters
+				// *looking at you, I'mon*
+				let username = item.sender.replace(/[^\w\s]/gi, '');
+
+				let imageName = avatars[username];
 				if (typeof imageName == 'undefined'){
 					imageName = 'default.png';
 				}

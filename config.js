@@ -11,7 +11,7 @@ config.avatars = {
     'Claire': 'Claire.png',
     'David': 'David.png',
     'Hiep': 'Hiep.png',
-    'I\'Mon': 'I\'Mon.png',
+    'Imon': 'Imon.png',
     'Jack': 'Jack.png',
     'Jakob': 'Jakob.png',
     'James': 'James.png',
