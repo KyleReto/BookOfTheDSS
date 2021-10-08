@@ -16,7 +16,7 @@
 		quotes.forEach(function(quote, key){%>
 			<a href='/quote/<%=key%>'>
 				<div class="searchQuote">
-				<%- include ('partials/quote', {quote: quote, linksEnabled: false}); -%>
+				<%- include ('partials/quote', {quote: quote, linksEnabled: false, avatars: avatars}); -%>
 				</div>
 			</a>
 			<br>

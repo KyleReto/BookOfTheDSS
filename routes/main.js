@@ -47,7 +47,7 @@ router.get('/removeQuote', function(req, res){
 router.get('/search', async function(req, res){
 	if (typeof req.query.query === 'undefined') return res.render('search');
 	await QuoteDB.searchQuotes(req.query.query).then((quotes) => {
-		return res.render('search', {quotes: quotes, query:req.query.query});
+		return res.render('search', {quotes: quotes, query:req.query.query, avatars: config.avatars});
 	}).catch((err) => {
 		return res.send("Sorry, something went wrong. Try again later.");
 	});
