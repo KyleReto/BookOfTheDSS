@@ -22,7 +22,7 @@
 			<button class="prevQuote" >&lt;</button>
 		</a>
 		<div class='quoteContainer'>
-			<%- include ('partials/quote', {linksEnabled: true}); -%>
+			<%- include ('partials/quote', {linksEnabled: true, avatars: avatars}); -%>
 		</div>
 		
 		<a href='/quote/<%=parseInt(id) + 1 %>'style="visibility:<%=rightVisibility%>">

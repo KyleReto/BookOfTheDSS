@@ -9,7 +9,12 @@
 		<a href="/profiles/<%=item.sender%>">
 			<%}%>
 			<div class="avatar">
-				<img src="/assets/avatars/<%=item.sender%>.png">
+				<%let imageName = avatars[item.sender]
+				if (typeof imageName == 'undefined'){
+					imageName = 'default.png';
+				}
+				%>
+				<img src="/assets/avatars/<%=imageName%>">
 			</div>
 		<%if (linksEnabled === true){%>
 		</a> <%}%>
