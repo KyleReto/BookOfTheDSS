@@ -74,6 +74,10 @@ router.get('/populateProfiles', async function(req, res){
 	res.send(ProfileDB.setJSONFile());
 });
 
+router.get('/persosona', function(req, res){
+	res.render('persosona');
+});
+
 router.get('/*', async function(req, res){
 	res.render('index');
 });
